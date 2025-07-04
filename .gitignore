@@ -1,8 +1,8 @@
 # ===========================================
 # OS-Specific Files
 # ===========================================
-.DS_Store            # macOS Finder metadata
-Thumbs.db            # Windows thumbnail cache
+.DS_Store
+Thumbs.db
 ehthumbs.db
 Icon?
 Desktop.ini
@@ -10,30 +10,31 @@ Desktop.ini
 # ===========================================
 # Java / Maven
 # ===========================================
-target/              # Maven build directory
-*.class              # Compiled class files
-*.jar                # JAR files
-*.war                # WAR files
-*.ear                # EAR files
+target/
+*.class
+*.jar
+*.war
+*.ear
+HELP.md
 
 # ===========================================
 # Spring Boot
 # ===========================================
-spring.log           # Spring Boot log file
+spring.log
 
 # ===========================================
 # Swagger / OpenAPI
 # ===========================================
-generated/           # Swagger codegen outputs
+generated/
 
 # ===========================================
 # IntelliJ IDEA
 # ===========================================
-.idea/               # IntelliJ IDEA settings
+.idea/
 *.iml
 *.ipr
 *.iws
-out/                 # IntelliJ output folder
+out/
 
 # ===========================================
 # Eclipse
@@ -41,17 +42,17 @@ out/                 # IntelliJ output folder
 .classpath
 .project
 .settings/
-bin/                 # Eclipse output folder
+bin/
 
 # ===========================================
 # Visual Studio Code
 # ===========================================
-.vscode/             # VS Code settings
+.vscode/
 
 # ===========================================
 # Environment Files
 # ===========================================
-.env                 # Environment variables
+.env
 
 # ===========================================
 # Logs
