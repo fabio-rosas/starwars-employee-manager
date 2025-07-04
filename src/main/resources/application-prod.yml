@@ -1,0 +1,21 @@
+# ===========================================
+# 🚀 Production Profile Configuration
+# ===========================================
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/starwarsdb
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASS}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate  # Prevent accidental schema changes
+    show-sql: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: WARN

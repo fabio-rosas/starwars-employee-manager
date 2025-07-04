@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- =========================================
+       📦 Project: Star Wars Employee API
+       Description: RESTful Microservice in Java 21 + Spring Boot 3
+       Author: Fabián Alvarez Rosas
+       ========================================= -->
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- 🔗 Spring Boot Parent -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.3</version>
+		<relativePath/>
+	</parent>
+
+	<!-- 🏷️ Project Identity -->
+	<groupId>dev.fabianalvarez</groupId>
+	<artifactId>starwars-employee-manager</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>StarWarsEmployee</name>
+	<description>REST API to manage Star Wars employees using Java 21 and Spring Boot 3</description>
+	<url>https://github.com/fabio-rosas/starwars-employee-manager</url>
+
+	<!-- 📜 License Information -->
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
+
+	<!-- 👨‍💻 Developer Information -->
+	<developers>
+		<developer>
+			<id>fabiorosas</id>
+			<name>Fabián Alvarez Rosas</name>
+			<email>ing.alvarezrosas@gmail.com</email>
+		</developer>
+	</developers>
+
+	<!-- 🔗 Source Code Management -->
+	<scm>
+		<url>https://github.com/fabio-rosas/starwars-employee-manager</url>
+		<connection>scm:git:git://github.com/fabio-rosas/starwars-employee-manager.git</connection>
+		<developerConnection>scm:git:ssh://github.com:fabio-rosas/starwars-employee-manager.git</developerConnection>
+	</scm>
+
+	<!-- ⚙️ Global Properties -->
+	<properties>
+		<java.version>21</java.version>
+		<springdoc.version>2.5.0</springdoc.version>
+	</properties>
+
+	<!-- 📦 Project Dependencies -->
+	<dependencies>
+
+		<!-- 🌐 Spring Web (REST Controllers) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- 💾 Spring Data JPA (Persistence Layer) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- 🛡️ Spring Validation (Input Validation) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<!-- 🐘 H2 In-Memory Database for Development -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- 🍀 Lombok (Boilerplate Reduction) -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- 📄 Springdoc OpenAPI (Swagger Integration) -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${springdoc.version}</version>
+		</dependency>
+
+		<!-- 🔄 Spring Boot DevTools (Hot Reload for Development) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- 🧪 Spring Boot Test (Testing Framework) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<!-- 🔨 Build Configuration -->
+	<build>
+		<plugins>
+			<!-- 🔧 Maven Compiler Plugin (Java 21 + Lombok Support) -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+
+			<!-- 🚀 Spring Boot Maven Plugin -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

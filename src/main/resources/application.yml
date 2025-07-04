@@ -1,0 +1,26 @@
+# ===========================================
+# 🌍 Global Application Configuration
+# ===========================================
+spring:
+  application:
+    name: starwars-employee-manager
+
+  profiles:
+    active: dev  # Default profile (change to 'prod' for production)
+
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    dev.fabianalvarez: DEBUG
