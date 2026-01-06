@@ -1,17 +1,7 @@
 package dev.fabianalvarez.starwarsemployee.controller;
 
-import dev.fabianalvarez.starwarsemployee.constants.ApiPaths;
-import dev.fabianalvarez.starwarsemployee.constants.SwaggerDoc;
-import dev.fabianalvarez.starwarsemployee.dto.EmployeeRequest;
-import dev.fabianalvarez.starwarsemployee.dto.EmployeeResponse;
-import dev.fabianalvarez.starwarsemployee.service.IEmployeeService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,20 +13,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.fabianalvarez.starwarsemployee.constants.ApiPaths;
+import dev.fabianalvarez.starwarsemployee.constants.SwaggerDoc;
+import dev.fabianalvarez.starwarsemployee.dto.EmployeeRequest;
+import dev.fabianalvarez.starwarsemployee.dto.EmployeeResponse;
+import dev.fabianalvarez.starwarsemployee.service.IEmployeeService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+
 /**
  * REST Controller to manage employees in the Star Wars Employee API.
  */
 @RestController
 @RequestMapping(ApiPaths.EMPLOYEES)
 @Tag(name = SwaggerDoc.TAG_EMPLOYEE)
+@RequiredArgsConstructor
 public class EmployeeController {
 
   private final IEmployeeService employeeService;
-
-  @Autowired
-  public EmployeeController(IEmployeeService employeeService) {
-    this.employeeService = employeeService;
-  }
 
   @PostMapping
   @Operation(summary = SwaggerDoc.CREATE_SUMMARY)
